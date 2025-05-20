@@ -28,3 +28,14 @@ test_that("Median filter removes outlier correctly", {
   expect_equal(MedianFilter(x), expected_output)
 })
 
+test_that("Median filter works for a long time series", {
+  x <- rnorm(1000)
+  x_filt <- MedianFilter(x, 7)
+
+  # filtered data should have the same length as `x`
+  expect_equal(length(x_filt), length(x))
+
+  # filtered data should also have a smaller standard deviation
+  expect_true(sd(x_filt) <= sd(x))
+})
+
