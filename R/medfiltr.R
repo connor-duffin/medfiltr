@@ -20,8 +20,7 @@ MedianFilter <- function(x, window = 3, na.rm = FALSE) {
   x_filt <- numeric(n)
 
   for (i in seq_along(x_filt)) {
-    j <- i + pad
-    x_sub <- x_padded[(j - pad):(j + pad)]
+    x_sub <- x_padded[i:(i + 2 * pad)]
     x_filt[i] <- median(x_sub, na.rm = na.rm)
   }
 
