@@ -5,7 +5,8 @@
 #'   (default is 3).
 #' @param na.rm Logical; if \code{TRUE}, missing values are removed before
 #'   computing the median.
-#' @return A numeric vector of the same length as \code{x}, containing the median-filtered signal.
+#' @return A numeric vector of the same length as \code{x}, containing the
+#'   median-filtered signal.
 #'
 #' @export
 MedianFilter <- function(x, window = 3, na.rm = FALSE) {
